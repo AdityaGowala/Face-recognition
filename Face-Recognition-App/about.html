@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="about.css">
+    <script defer src="generaljs.js"></script>
+    <link rel="stylesheet" href="general.css">
+    <title>About Us</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+          <div class="logo">FaceRecognition</div>
+          <ul class="navbar-links" id="navbarLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="documentation.html">Documentation</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+          <button class="navbar-toggle" id="menuIcon">☰</button> <!-- Hamburger menu icon -->
+        </div>
+      </nav>
+    
+    <!-- Heading -->
+    <h1>About Us</h1>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-text">
+            <p>
+                We are students of BCA, Semester 5 at JIS University, working on this project as part of our academic curriculum. Our focus is on developing a cutting-edge Face Recognition system using advanced technologies to create practical and secure applications.
+            </p>
+            
+        </div>
+    </div>
+
+    <!-- People Involved -->
+    <section class="team-section">
+        <h2>People Involved</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="./images/aditya.jpeg" alt="Aditya Gowala">
+                <h3>Aditya Gowala (Team Leader)</h3>
+                <p>22CS031002</p>
+                <p>BCA</p>
+            </div>
+            <div class="team-member">
+                <img src="./images/priynshu.jpeg" alt="Priyanshu Gowala">
+                <h3>Priyanshu Gowala</h3>
+                <p>22CS031050</p>
+                <p>BCA</p>
+            </div>
+            <div class="team-member">
+                <img src="./images/ganpati2.jpeg" alt="Ganpati Sharma">
+                <h3>Ganpati Sharma</h3>
+                <p>22CS031032</p>
+                <p>BCA</p>
+            </div>
+            <div class="team-member">
+                <img src="./images/sarosij.jpeg" alt="Sarosij Ghosh Ray">
+                <h3>Sarosij Ghosh Ray</h3>
+                <p>22CS031056</p>
+                <p>BCA</p>
+            </div>
+            <div class="team-member">
+                <img src="./images/arnab2.jpeg" alt="Arnab Malakar">
+                <h3>Arnab Malakar</h3>
+                <p>22CS031017</p>
+                <p>BCA</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Face Recognition Team. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+                <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                <li><a href="#privacy-policy">Privacy Policy</a></li>
+            </ul>
+        </div>
+      </footer>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+  // Select the elements
+  const menuIcon = document.getElementById('menuIcon'); // Hamburger icon
+  const navbarLinks = document.querySelector('.navbar-links'); // Navbar links container
+  
+  // Add event listener to toggle slide-in menu on click (hamburger icon)
+  menuIcon.addEventListener("click", () => {
+    navbarLinks.classList.toggle("show"); // Toggle the visibility of the slide-in menu
+  });
+});
+        </script>
+</body>
+</html>

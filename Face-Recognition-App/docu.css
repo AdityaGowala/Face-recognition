@@ -1,0 +1,248 @@
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+            padding: 40px;
+            margin: 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            
+        }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px; /* Narrower scrollbar */
+    height: 6px; /* Also reduce height for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #007b5e; /* Main scrollbar color */
+    border-radius: 3px; /* Rounded corners for a sleek look */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #005944; /* Slightly darker on hover */
+}
+
+::-webkit-scrollbar-track {
+    background: #f7f7f7; /* Subtle light background for the track */
+    border-radius: 3px; /* Match the thumb's rounded corners */
+}
+        /* Navbar Styles */
+/* Navbar */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 2rem;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #007b5e;
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  
+  .navbar-links li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-links li a:hover {
+    color: #007b5e;
+  }
+  
+  /* Navbar Toggle for Mobile */
+  .navbar-toggle {
+    display: none; /* Keep hidden by default */
+    font-size: 2rem; /* Size of the icon */
+    background: transparent; /* No background */
+    border: none; /* Remove border */
+    color: #007b5e; /* Icon color */
+    cursor: pointer; /* Pointer cursor */
+    padding: 10px; /* Add padding for click area */
+    border-radius: 5px; /* Rounded edges */
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  /* Show toggle button on smaller screens */
+  @media (max-width: 768px) {
+    .navbar-toggle {
+      display: block;
+    }
+  
+    .navbar-links {
+      display: none;  /* Hide links by default on smaller screens */
+      position: absolute;
+      top: 70px;
+      left: 0;
+      background-color: white;
+      width: 100%;
+      padding: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      flex-direction: column;
+      gap: 1rem;
+      border-radius: 5px;
+    }
+  
+    .navbar-links.show {
+      display: flex;  /* Show links when the "show" class is added */
+    }
+  }
+  
+  /* Hover effect for the hamburger menu icon */
+  .navbar-toggle:hover {
+    background-color: #e0f4ec;
+    color: #00583d;
+  }
+  
+  .navbar-toggle:focus {
+    outline: 2px solid #007b5e;
+    outline-offset: 2px;
+  }
+
+        h1, h2 {
+            color: #007b5e;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            border-bottom: 3px solid #007b5e;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .subtitle{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .section:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #007b5e;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #005944;
+            transform: translateY(-3px);
+        }
+
+          /* Footer Styles */
+.footer {
+    background-color: #007b5e; /* Professional dark green */
+    color: #ffffff; /* White text for contrast */
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 0.9rem;
+    margin-top: 40px;
+    border-top: 4px solid #005944; /* Slight border to separate footer */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.footer p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between links */
+}
+
+.footer-links li {
+    display: inline;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #e0e0e0; /* Slightly lighter shade on hover */
+}
+
+/* Responsive Footer for Small Screens */
+@media (max-width: 768px) {
+    .footer {
+        font-size: 0.8rem;
+    }
+
+    .footer-links {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px;
+    }
+}

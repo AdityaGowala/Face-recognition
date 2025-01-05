@@ -1,0 +1,738 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px; /* Narrower scrollbar */
+    height: 6px; /* Also reduce height for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #007b5e; /* Main scrollbar color */
+    border-radius: 3px; /* Rounded corners for a sleek look */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #005944; /* Slightly darker on hover */
+}
+
+::-webkit-scrollbar-track {
+    background: #f7f7f7; /* Subtle light background for the track */
+    border-radius: 3px; /* Match the thumb's rounded corners */
+}
+
+/* Navbar */
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 2rem;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #007b5e;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: #555;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: #007b5e;
+}
+
+/* Navbar Toggle for Mobile */
+.navbar-toggle {
+  display: none; /* Keep hidden by default */
+  font-size: 2rem; /* Size of the icon */
+  background: transparent; /* No background */
+  border: none; /* Remove border */
+  color: #007b5e; /* Icon color */
+  cursor: pointer; /* Pointer cursor */
+  padding: 10px; /* Add padding for click area */
+  border-radius: 5px; /* Rounded edges */
+  transition: background 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Show toggle button on smaller screens */
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    display: none;  /* Hide links by default on smaller screens */
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 5px;
+  }
+
+  .navbar-links.show {
+    display: flex;  /* Show links when the "show" class is added */
+  }
+}
+
+/* Hover effect for the hamburger menu icon */
+.navbar-toggle:hover {
+  background-color: #e0f4ec;
+  color: #00583d;
+}
+
+.navbar-toggle:focus {
+  outline: 2px solid #007b5e;
+  outline-offset: 2px;
+}
+
+/* Settings Button */
+#settingsButton {
+  background-color: #007b5e;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#settingsButton:hover {
+  background-color: #005f43;
+  transform: scale(1.1);
+}
+
+#settingsButton .material-symbols-outlined {
+  font-size: 1.5rem;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  padding: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.dropdown-menu.show {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s linear 0s;
+}
+
+.dropdown-menu a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 16px;
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+
+ /* Hero Section Styles */
+ .hero-section {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Adjust height for a banner-like appearance */
+    background: url('facial-recognition.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+
+  /* Overlay to darken the image */
+  .hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay for better text readability */
+    z-index: 1;
+  }
+
+  /* Hero Text Content */
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-content button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    color: white;
+    background-color: #007b5e;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 123, 94, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .hero-content button:hover {
+    background-color: #005944;
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 89, 68, 0.5);
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      height: 50vh; /* Reduce height on smaller screens */
+    }
+
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+
+    .hero-content p {
+      font-size: 1rem;
+    }
+
+    .hero-content button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+  }
+/* Section Layout */
+.section-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 10px;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+/* Section Styling */
+.section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 20px;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Section Heading */
+.section-heading {
+  font-size: 1.8rem;
+  color: #007b5e;
+  text-align: left;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+/* Section Hover Effect */
+.section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Working Label and Recognize */
+.working-label, .working-recognize {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Explanation Containers */
+.explain-recog, .explain-addPart {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  padding: 15px;
+  background-color: #eef5f2;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Snackbar */
+.snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  /* Make section containers stack vertically on small screens */
+  .section-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+  }
+
+  /* Adjust the width of each section for smaller screens */
+  .section {
+      flex: none;
+      width: 100%;
+      max-width: 600px; /* Limit max width */
+      padding: 15px;
+  }
+
+  /* Adjust heading sizes for mobile */
+  .section-heading {
+      font-size: 1.5rem;
+  }
+
+  /* Ensure form elements fit better on small screens */
+  .working-label .input-group, .working-recognize .input-group {
+      width: 100%;
+      gap: 10px;
+  }
+
+  .working-label input, .working-recognize input {
+      width: 100%; /* Make input fields span the available space */
+      padding: 10px;
+      font-size: 1rem;
+  }
+
+  /* Adjust padding and font size of explanation sections */
+  .explain-recog, .explain-addPart {
+      font-size: 0.9rem;
+      padding: 10px;
+  }
+
+  /* Adjust snackbar font size for smaller screens */
+  .snackbar {
+      font-size: 15px;
+      min-width: 200px;
+  }
+}
+
+/* For very small screens (e.g., mobile phones in portrait mode) */
+@media (max-width: 480px) {
+  .section-heading {
+      font-size: 1.3rem; /* Smaller headings */
+  }
+
+  .working-label input, .working-recognize input {
+      font-size: 0.9rem; /* Slightly smaller text in input fields */
+  }
+
+  /* Make explanations even smaller and adjust padding */
+  .explain-recog, .explain-addPart {
+      font-size: 0.8rem;
+      padding: 8px;
+  }
+}
+
+
+.snackbar.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Container for displaying the uploaded image */
+#container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px; /* Optional: Set a max width for consistency */
+    height: 400px; /* Fixed height */
+    border: 2px dashed #ccc;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensure no overflow */
+  }
+  
+  #container img {
+    width: 100%; /* Image takes full width */
+    height: 100%; /* Image takes full height */
+    object-fit: contain; /* Keep the image's aspect ratio intact */
+    border-radius: 5px;
+  }
+  
+  canvas {
+    position: absolute; /* Position canvas on top of the image */
+    top: 0;
+    left: 0;
+    z-index: 1; /* Ensure the canvas is on top of the image */
+    width: 100%; /* Match canvas size to the container */
+    height: 100%;
+  }
+  
+  .placeholder-text {
+    font-size: 1.2rem;
+    color: #777;
+    font-weight: bold;
+    position: absolute;
+    z-index: 2;
+    visibility: visible;
+    text-align: center;
+  }
+/* Container for input group */
+.input-group {
+    display: flex;
+    flex-direction: column; /* Arrange items in a vertical column */
+    gap: 15px; /* Add space between elements */
+    width: 100%; /* Full width */
+    max-width: 500px; /* Optional: Set a max width for consistency */
+    margin: 0 auto; /* Center the input group */
+    padding: 15px; /* Padding around the group */
+    border: 1px solid #ddd; /* Light border for the input group */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #fff; /* White background for input group */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for clean look */
+  }
+  
+  /* Style for file input */
+  #trainingImage {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Light background */
+    cursor: pointer; /* Indicate that it’s clickable */
+  }
+  
+  #trainingImage::file-selector-button {
+    font-size: 16px;
+    color: #4CAF50; /* Green text for the file button */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Style for the text input (label name) */
+  #nameInput {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Ensure padding doesn’t affect width */
+  }
+  
+  /* Style for the button */
+  #addLabeledImage {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Indicate that it’s clickable */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  #addLabeledImage:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  #addLabeledImage:active {
+    background-color: #3e8e41; /* Even darker green when button is clicked */
+  }
+/* Style for file input */
+#imageUpload {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Light background */
+    cursor: pointer; /* Indicate that it’s clickable */
+    width: 100%; /* Full width */
+  }
+  
+  #imageUpload::file-selector-button {
+    font-size: 16px;
+    color: #4CAF50; /* Green text for the file button */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Optional: Style for file input placeholder text */
+  #imageUpload::before {
+    content: "Upload Image"; /* Placeholder text */
+    font-size: 14px;
+    color: #888;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+  }    
+#labeledImagesContainer {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Grid with flexible column size */
+      gap: 20px; /* Space between grid items */
+      padding: 20px; /* Padding around the grid */
+      max-width: 100%; /* Full width */
+      margin: 0 auto; /* Center the container */
+      background-color: #fafafa; /* Light gray background */
+      border-radius: 10px; /* Rounded corners */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow for a clean look */
+      overflow-y: auto; /* Allow scrolling if content overflows */
+      
+      /* Modal Popup Styles */
+      position: fixed; /* Fixed position */
+      top: 50%; /* Center vertically */
+      left: 50%; /* Center horizontally */
+      transform: translate(-50%, -50%); /* Offset for exact centering */
+      width: 80%; /* Take 80% of the screen width */
+      height: 60%; /* Take 60% of the screen height */
+      z-index: 1000; /* Ensure the popup appears above other content */
+      display: none; /* Hidden by default */
+      background-color: #ffffff; /* White background for the modal */
+      border-radius: 10px;
+      overflow: auto; /* Allow scrolling if the content exceeds the container */
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Strong shadow for emphasis */
+      padding: 30px; /* Additional padding inside the modal */
+    }
+    
+    /* Display when the popup is open */
+    #labeledImagesContainer.show {
+      display: grid;
+    }
+
+    /* Individual item style inside labeled container */
+    .labeled-item {
+      background-color: #fff; /* White background for items */
+      border-radius: 8px; /* Rounded corners for items */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow around each item */
+      padding: 15px; /* Padding inside each item */
+      display: flex;
+      justify-content: center; /* Center the content horizontally */
+      align-items: center; /* Center the content vertically */
+      text-align: center; /* Center text */
+      font-size: 1rem;
+      color: #333; /* Dark text color */
+      cursor: pointer; /* Indicate that items are clickable */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    }
+
+    /* Hover effect for each labeled item */
+    .labeled-item:hover {
+      transform: scale(1.05); /* Slightly enlarge item on hover */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+    }
+
+    /* No data message when no items are available */
+    #noDataMessage {
+      position: absolute;
+      top: 50%; /* Center vertically */
+      left: 50%; /* Center horizontally */
+      transform: translate(-50%, -50%); /* Exact centering */
+      font-size: 1.5rem; /* Larger font size */
+      color: #999; /* Light gray text color */
+      font-weight: bold;
+      text-align: center; /* Center the text */
+      z-index: 999; /* Ensure it stays on top of the container */
+    }
+
+    /* Responsive design for small screens */
+    @media (max-width: 768px) {
+      #labeledImagesContainer {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Reduce item width on small screens */
+      }
+    }
+  
+  /* Footer Styles */
+.footer {
+    background-color: #007b5e; /* Professional dark green */
+    color: #ffffff; /* White text for contrast */
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 0.9rem;
+    margin-top: 40px;
+    border-top: 4px solid #005944; /* Slight border to separate footer */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.footer p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between links */
+}
+
+.footer-links li {
+    display: inline;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #e0e0e0; /* Slightly lighter shade on hover */
+}
+
+/* Responsive Footer for Small Screens */
+@media (max-width: 768px) {
+    .footer {
+        font-size: 0.8rem;
+    }
+
+    .footer-links {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px;
+    }
+}
+
+#showLabeledDataButton {
+  width: 150px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: white;
+  background-color: #007b5e;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 123, 94, 0.3);
+  transition: all 0.3s ease;
+}
+#clearDataButton{
+  width: 150px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: white;
+  background-color: rgb(245, 40, 40);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(12, 17, 16, 0.3);
+  transition: all 0.3s ease;
+}
+
+#showLabeledDataButton button:hover {
+  background-color: #005944;
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 89, 68, 0.5);
+}
+  

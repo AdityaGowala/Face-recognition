@@ -1,0 +1,6 @@
+  /* Active Link Styles */
+  .navbar-links .active {
+    font-weight: bold; /* Make the active link bold */
+    color: #007b5e; /* Set the text color to match the navbar's theme */
+    border-bottom: 2px solid #007b5e; /* Underline the active link with the theme color */
+}
